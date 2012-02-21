@@ -1,4 +1,22 @@
 HealthTracker::Application.routes.draw do
+  resources :alcohols
+
+  resources :caffeines
+
+  resources :vitamins
+
+  resources :foods
+
+  resources :sleeps
+
+  resources :gyms
+
+  match '/pages/gym' => 'pages#gym'
+  match '/pages/sleep' => 'pages#sleep'
+  match '/pages/vitamins' => 'pages#vitamins'
+  match '/pages/caffeine' => 'pages#caffeine'
+  match '/pages/alcohol' => 'pages#alcohol'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +66,7 @@ HealthTracker::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'pages#index'
 
   # See how all your routes lay out with "rake routes"
 

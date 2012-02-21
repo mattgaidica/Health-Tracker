@@ -1,0 +1,28 @@
+<div class="row-fluid">
+  <div class="span12">
+    <div style="margin:0 15px 0 15px;" class="well">
+      <% if !Gym.last.nil? && Gym.last.created_at == Gym.last.updated_at %>
+        <a href="/pages/gym" class="btn btn-large btn-danger">Done with Workout</a>
+      <% else %>
+        <a href="/pages/gym" class="btn btn-large btn-primary">Starting a Workout</a>
+      <% end %>
+      <hr>
+      <% if !Sleep.last.nil? && Sleep.last.created_at == Sleep.last.updated_at %>
+        <a href="/pages/sleep" class="btn btn-large btn-danger">Just Woke Up</a>
+      <% else %>
+        <a href="/pages/sleep" class="btn btn-large btn-primary">Going to Sleep</a>
+      <% end %>
+      <hr>
+      <%= form_for(Food.new) do |f| %>
+        <%= f.text_area :description %>
+        <button type="submit" class="btn btn-large">Submit Food</button>
+      <% end %>
+      <hr>
+      <a href="/pages/vitamins" class="btn btn-warning">Vitamins</a>
+      <hr>
+      <a href="/pages/caffeine" class="btn btn-warning">Caffeine</a>
+      <hr>
+      <a href="/pages/alcohol" class="btn btn-warning">Alcohol</a>
+    </div>
+  </div>
+</div>
